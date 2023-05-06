@@ -1,0 +1,42 @@
+{
+  "trips": [
+    {
+      "departure": "2021-05-31T23:57:25",
+      "return": "2021-05-31T23:56:59",
+      "departureStationId": 94,
+      "departureStationName": "Laajalahden aukio",
+      "returnStationId": 100,
+      "returnStationName": "Teljäntie",
+      "coveredDistance": 2043,
+      "duration": 500
+    },
+    {
+      "departure": "2021-05-31T23:56:59",
+      "return": "2021-06-01T00:07:14",
+      "departureStationId": 82,
+      "departureStationName": "Töölöntulli",
+      "returnStationId": 113,
+      "returnStationName": "Pasilan Asema",
+      "coveredDistance": 1870,
+      "duration": 611
+    }
+  ],
+
+  "stations": [
+    {
+      "fid": 204,
+      "id": 94,
+      "nimi": "Laajalahden aukio",
+      "namn": "Bredviksplatsen",
+      "name": "Laajalahden aukio",
+      "osoite": "Munkkiniemen puistotie 21",
+      "adress": "Munksnäs allén 21",
+      "kaupunki": "",
+      "stad": "",
+      "operaator": "",
+      "kapasiteet": 20,
+      "x": 24.8763012644261,
+      "y": 60.1978706012264
+    }
+  ]
+}
