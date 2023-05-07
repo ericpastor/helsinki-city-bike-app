@@ -12,11 +12,11 @@
   "author": "Eric Pastor Padial",
   "license": "ISC",
   "dependencies": {
-    "@apollo/server": "^4.7.1",
-    "axios": "^1.4.0",
-    "graphql": "^16.6.0"
+    "@apollo/server": "4.7.1",
+    "axios": "1.4.0",
+    "graphql": "16.6.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "2.0.22"
   }
 }

@@ -14,10 +14,28 @@ const typeDefs = `
     duration: Int!
   }
 
+  type Station {
+    fid: Int!
+    id: Int!
+    nimi: String!
+    namn: String!
+    name: String!,
+    osoite: String!
+    adress: String!
+    kaupunki: String
+    stad: String
+    operaator: String
+    kapasiteet: Int!
+    x: Int!
+    y: Int!
+  }
+
   type Query {
     tripsCount: Int!
     allTrips: [Trip!]!
     findTripByDeparture(departureStationName: String!):Trip
+    allStations: [Station!]!
+    findStationByName(name: String!):Station
   }
 `
 
@@ -37,6 +55,19 @@ const resolvers = {
       return trips.find(
         (trip) => trip.departureStationName === departureStationName
       )
+    },
+    allStations: async () => {
+      const { data: stations } = await axios.get(
+        "http://localhost:3001/stations"
+      )
+      return stations
+    },
+    findStationByName: async (root, args) => {
+      const { data: stations } = await axios.get(
+        "http://localhost:3001/stations"
+      )
+      const { name } = args
+      return stations.find((station) => station.name === name)
     },
   },
 }
