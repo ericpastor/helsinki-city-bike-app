@@ -1,8 +1,15 @@
+import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import Home from './components/Home'
+import Navbar from './components/Navbar'
 
 const App = () => {
   return (
     <div>
-      <h1>City Bike App</h1>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
     </div>
   )
 }
