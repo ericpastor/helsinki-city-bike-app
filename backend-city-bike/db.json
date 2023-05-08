@@ -13,7 +13,7 @@
     {
       "departure": "2021-05-31T23:56:59",
       "return": "2021-06-01T00:07:14",
-      "departureStationId": 82,
+      "departureStationId": 81,
       "departureStationName": "Töölöntulli",
       "returnStationId": 113,
       "returnStationName": "Pasilan Asema",
@@ -33,7 +33,7 @@
     {
       "departure": "2021-05-31T23:56:59",
       "return": "2021-06-01T00:07:14",
-      "departureStationId": 82,
+      "departureStationId": 84,
       "departureStationName": "Töölöntulli",
       "returnStationId": 113,
       "returnStationName": "Pasilan Asema",
@@ -43,7 +43,7 @@
     {
       "departure": "2021-05-31T23:56:59",
       "return": "2021-06-01T00:07:14",
-      "departureStationId": 82,
+      "departureStationId": 86,
       "departureStationName": "Töölöntulli",
       "returnStationId": 113,
       "returnStationName": "Pasilan Asema",
@@ -53,7 +53,7 @@
     {
       "departure": "2021-05-31T23:56:59",
       "return": "2021-06-01T00:07:14",
-      "departureStationId": 82,
+      "departureStationId": 87,
       "departureStationName": "Töölöntulli",
       "returnStationId": 113,
       "returnStationName": "Pasilan Asema",
@@ -63,7 +63,7 @@
     {
       "departure": "2021-05-31T23:56:59",
       "return": "2021-06-01T00:07:14",
-      "departureStationId": 82,
+      "departureStationId": 892,
       "departureStationName": "Töölöntulli",
       "returnStationId": 113,
       "returnStationName": "Pasilan Asema",
@@ -73,7 +73,7 @@
     {
       "departure": "2021-05-31T23:56:59",
       "return": "2021-06-01T00:07:14",
-      "departureStationId": 82,
+      "departureStationId": 444,
       "departureStationName": "Töölöntulli",
       "returnStationId": 113,
       "returnStationName": "Pasilan Asema",
@@ -83,7 +83,7 @@
     {
       "departure": "2021-05-31T23:56:59",
       "return": "2021-06-01T00:07:14",
-      "departureStationId": 82,
+      "departureStationId": 182,
       "departureStationName": "Töölöntulli",
       "returnStationId": 113,
       "returnStationName": "Pasilan Asema",
@@ -93,7 +93,7 @@
     {
       "departure": "2021-05-31T23:56:59",
       "return": "2021-06-01T00:07:14",
-      "departureStationId": 82,
+      "departureStationId": 1182,
       "departureStationName": "Töölöntulli",
       "returnStationId": 113,
       "returnStationName": "Pasilan Asema",
@@ -103,7 +103,7 @@
     {
       "departure": "2021-05-31T23:56:59",
       "return": "2021-06-01T00:07:14",
-      "departureStationId": 82,
+      "departureStationId": 8342,
       "departureStationName": "Töölöntulli",
       "returnStationId": 113,
       "returnStationName": "Pasilan Asema",
@@ -113,7 +113,7 @@
     {
       "departure": "2021-05-31T23:56:59",
       "return": "2021-06-01T00:07:14",
-      "departureStationId": 82,
+      "departureStationId": 8452,
       "departureStationName": "Töölöntulli",
       "returnStationId": 113,
       "returnStationName": "Pasilan Asema",
@@ -123,7 +123,7 @@
     {
       "departure": "2021-05-31T23:56:59",
       "return": "2021-06-01T00:07:14",
-      "departureStationId": 82,
+      "departureStationId": 821,
       "departureStationName": "Töölöntulli",
       "returnStationId": 113,
       "returnStationName": "Pasilan Asema",
