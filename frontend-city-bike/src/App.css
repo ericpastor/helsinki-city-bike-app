@@ -88,4 +88,70 @@ div.home>main>h1{
   height: 300px;
   width: 300px;
 }
+
+.columns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 25px;
+  margin-left: 30px;
+  width: 1200px;
+}
+
+.columns table{
+  margin-top: 45px;
+}
+
+.bike-trips {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  height: 45px;
+  top: 0px;
+  background-color:white;
+  font-weight: lighter;
+  color: #5f6368;
+  margin: -16px;
+  padding: 20px 32px;
+  box-shadow: 0 0 5px 0 rgb(49, 49, 49);
+  border-radius: 2px;
+  
+}
+.bike-trips h2 {
+  
+  background-color: white;
+  margin-left: 30px;
+}
+
+th {
+  flex-wrap: wrap;
+  top: 0px;
+  background-color: #183153 ;
+  font-weight: lighter;
+  color: white ;
+  margin: -16px;
+  padding: 10px 12px;
+  box-shadow: 0 0 5px 0 rgb(49, 49, 49);
+  border-radius: 2px;
+}
+
+.trips td {
+  flex-wrap: wrap;
+  margin-top: 30px;
+  text-align: center;
+  width: 8rem;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 5px rgb(218, 213, 213);
+  border-radius: 2px;
+  height: 1.5em;
+}
+.trips td:hover{
+  box-shadow: 0 2px 5px coral;
+
+}
+.departure:hover {
+  color:white;
+  background-color: #538dd7;
+}
+
  
