@@ -79,12 +79,12 @@ const Trips = ({ trips }) => {
                   <td>{trip.returnStationName}</td>
                   <td>
                     {new Intl.NumberFormat(locale, optionsDistance).format(
-                      trip.coveredDistance / 1000
+                      (trip.coveredDistance / 1000).toFixed(2)
                     )}
                   </td>
                   <td>
                     {new Intl.NumberFormat(locale, optionsTime).format(
-                      trip.duration / 60
+                      (trip.duration / 60).toFixed(2)
                     )}
                   </td>
                 </tr>
