@@ -1,3 +1,5 @@
+import FilterTrip from './FitlerTrip'
+
 const Home = () => {
   return (
     <div className='home'>
@@ -11,7 +13,8 @@ const Home = () => {
       </main>
       <section className='options'>
         <div>
-          <h4>Search your station</h4>
+
+          <FilterTrip />
           <button className='button-options'>List of trips </button>
         </div>
       </section>
