@@ -191,9 +191,12 @@ th {
   box-shadow: 0 2px 5px coral;
 
 }
+
 .departure:hover {
   color:white;
   background-color: #538dd7;
 }
 
- 
+ .stations{
+  margin-top: 50px;
+ }

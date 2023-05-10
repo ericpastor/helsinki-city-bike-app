@@ -26,15 +26,15 @@ const typeDefs = `
     stad: String
     operaator: String
     kapasiteet: Int!
-    x: Int!
-    y: Int!
+    x: String!
+    y: String!
   }
 
   type Query {
     tripsCount: Int!
     allTrips(offset: Int, limit: Int!, departureStationName: String, returnStationName: String): [Trip!]!
     findTripByDeparture(departureStationName: String!):Trip
-    allStations: [Station!]!
+    allStations(offset: Int, limit: Int!): [Station!]!
     findStationByName(name: String!):Station
   }
 `
@@ -61,20 +61,20 @@ const resolvers = {
 
 
     },
-    findTripByDeparture: async (root, args) => {
+    findTripByDeparture: async (_, args) => {
       const { data: trips } = await axios.get("http://localhost:3001/trips")
       const { departureStationName } = args
       return trips.find(
         (trip) => trip.departureStationName === departureStationName
       )
     },
-    allStations: async () => {
+    allStations: async (_, {offset, limit}) => {
       const { data: stations } = await axios.get(
         "http://localhost:3001/stations"
       )
-      return stations
+      return stations.slice(offset, limit + offset)
     },
-    findStationByName: async (root, args) => {
+    findStationByName: async (_, args) => {
       const { data: stations } = await axios.get(
         "http://localhost:3001/stations"
       )

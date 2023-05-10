@@ -147,6 +147,67 @@
       "kapasiteet": 20,
       "x": 24.8763012644261,
       "y": 60.1978706012264
+    },
+    {
+      "fid": 192,
+      "id": 82,
+      "nimi": "Töölöntulli",
+      "namn": "Töölötull",
+      "name": "Töölöntulli",
+      "osoite": "Mannerheimintie 113",
+      "adress": "Mannerheimvägen 112",
+      "kaupunki": "",
+      "stad": "",
+      "operaator": "",
+      "kapasiteet": 16,
+      "x": 24.912893019047,
+      "y": 60.1909233737999
+    },
+    {
+      "fid": 193,
+      "id": 83,
+      "nimi": "Töölöntulli",
+      "namn": "Töölötull",
+      "name": "Töölöntulli1",
+      "osoite": "Mannerheimintie 114",
+      "adress": "Mannerheimvägen 112",
+      "kaupunki": "",
+      "stad": "",
+      "operaator": "",
+      "kapasiteet": 16,
+      "x": 24.912893019047,
+      "y": 60.1909233737999
+    },
+    {
+      "fid": 194,
+      "id": 84,
+      "nimi": "Töölöntulli",
+      "namn": "Töölötull",
+      "name": "Töölöntulli2",
+      "osoite": "Mannerheimintie 115",
+      "adress": "Mannerheimvägen 112",
+      "kaupunki": "",
+      "stad": "",
+      "operaator": "",
+      "kapasiteet": 16,
+      "x": 24.912893019047,
+      "y": 60.1909233737999
+    },
+    {
+      "fid": 195,
+      "id": 85,
+      "nimi": "Töölöntulli",
+      "namn": "Töölötull",
+      "name": "Töölöntulli3",
+      "osoite": "Mannerheimintie 116",
+      "adress": "Mannerheimvägen 112",
+      "kaupunki": "",
+      "stad": "",
+      "operaator": "",
+      "kapasiteet": 16,
+      "x": 24.912893019047,
+      "y": 60.1909233737999
     }
+
   ]
 }
