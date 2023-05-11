@@ -36,6 +36,7 @@ const typeDefs = `
     findTripByDeparture(departureStationName: String!):Trip
     allStations(offset: Int, limit: Int!): [Station!]!
     findStationByName(name: String!):Station
+    
   }
 `
 

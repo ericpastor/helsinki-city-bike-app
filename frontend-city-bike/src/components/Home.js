@@ -1,6 +1,15 @@
-import FilterTrip from './FitlerTrip'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
+  const navigate = useNavigate()
+
+  const handleClickTrip = () => {
+    navigate('/searchTrip')
+  }
+  const handleClickStation = () => {
+    navigate('/stationDetails')
+  }
+
   return (
     <div className='home'>
       <main>
@@ -13,9 +22,8 @@ const Home = () => {
       </main>
       <section className='options'>
         <div>
-
-          <FilterTrip />
-          <button className='button-options'>List of trips </button>
+          <button className='button-options' onClick={handleClickTrip}>Search a trip!</button>
+          <button className='button-options' onClick={handleClickStation}>Search a Station!</button>
         </div>
       </section>
     </div>

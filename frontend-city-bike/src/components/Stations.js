@@ -54,7 +54,7 @@ const Stations = ({ stations }) => {
               stations.map((station) => (
                 <div
                   className='stations'
-                  key={station.Id}
+                  key={station.id}
                   onClick={() => {
                     setStationNameToSearch(station.name)
                   }}
