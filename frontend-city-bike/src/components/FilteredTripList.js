@@ -1,10 +1,10 @@
 import { gql, useQuery } from '@apollo/client'
-import Trips from './Trips'
 import { useState } from 'react'
+import TableContentTrips from './TablesContent/TableContentTrips'
 
 const FILTERED_TRIPS = gql`
-query($offset: Int, $limit: Int!, $departureStationName: String, $returnStationName: String, ){
-    allTrips(offset: $offset, limit: $limit, departureStationName: $departureStationName, returnStationName: $returnStationName) {
+query ( $departureStationName: String, $returnStationName: String ){
+    allTrips (departureStationName: $departureStationName, returnStationName: $returnStationName) {
       departure
       return
       departureStationName
@@ -17,15 +17,12 @@ query($offset: Int, $limit: Int!, $departureStationName: String, $returnStationN
   }
 `
 
-const PAGE_SIZE = 2
-
 const FilteredTripList = () => {
   const [departureInput, setDepartureInput] = useState('')
   const [returnInput, setReturnInput] = useState('')
-  const [page, setPage] = useState(0)
 
   const { data, error, loading } = useQuery(FILTERED_TRIPS,
-    { variables: { limit: PAGE_SIZE, offset: page * PAGE_SIZE, departureStationName: departureInput, returnStationName: returnInput } })
+    { variables: { departureStationName: departureInput, returnStationName: returnInput } })
 
   if (error) return <span style={{ color: 'red' }}>{error}</span>
 
@@ -44,7 +41,7 @@ const FilteredTripList = () => {
 
       {!departureInput || !returnInput
         ? <p>Choose a departure and return Station</p>
-        : <><div>{loading ? <p>loading...</p> : <Trips trips={data.allTrips} />}</div><button disabled={!page} onClick={() => setPage(prev => prev - 1)}>Previous</button><span>Page {page + 1}</span><button onClick={() => setPage(prev => prev + 1)}>Next</button></>}
+        : <><div>{loading ? <p>loading...</p> : <TableContentTrips trips={data.allTrips} />}</div></>}
 
     </>
   )

@@ -7,10 +7,12 @@ import TripList from './components/TripList'
 import FilteredTripList from './components/FilteredTripList'
 import StationList from './components/StationList'
 import SearchStations from './components/SearchStations'
+import CssBaseline from '@mui/material/CssBaseline'
 
 const App = () => {
   return (
     <div>
+      <CssBaseline />
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />

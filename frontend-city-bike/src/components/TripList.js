@@ -1,10 +1,9 @@
 import { gql, useQuery } from '@apollo/client'
-import Trips from './Trips'
-import { useState } from 'react'
+import TableContentTrips from './TablesContent/TableContentTrips'
 
 const ALL_TRIPS = gql`
-  query($limit: Int!, $offset: Int!) {
-    allTrips(limit: $limit, offset: $offset) {
+  query {
+    allTrips {
       departure
       return
       departureStationName
@@ -16,24 +15,14 @@ const ALL_TRIPS = gql`
     }
   }
 `
-const PAGE_SIZE = 2
 const TripList = () => {
-  const [page, setPage] = useState(0)
-  const { data, error, loading } = useQuery(ALL_TRIPS, {
-    variables: {
-      limit: PAGE_SIZE,
-      offset: page * PAGE_SIZE
-    }
-  })
+  const { data, error, loading } = useQuery(ALL_TRIPS)
 
   if (error) return <span style={{ color: 'red' }}>{error}</span>
 
   return (
     <>
-      <div>{loading ? <p>loading...</p> : <Trips trips={data.allTrips} />}</div>
-      <button disabled={!page} onClick={() => setPage(prev => prev - 1)}>Previous</button>
-      <span>Page {page + 1}</span>
-      <button onClick={() => setPage(prev => prev + 1)}>Next</button>
+      <div style={{ display: 'flex', flexDirection: 'column', alignContent: 'flex-start', height: '80vh', padding: '50px 0px 20px 10%', backgroundColor: '#1a73e8' }}>{loading ? <p>loading...</p> : <TableContentTrips trips={data.allTrips} />}</div>
     </>
   )
 }

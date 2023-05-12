@@ -1,33 +1,32 @@
-* {
-  
-  margin: 0;
-  box-sizing: border-box;
-  background-color: #1c74e7;
-  font-family: 'Montserrat', sans-serif;
+html{
+  background-color: #1a73e8;
+}
+div#root{
+  background-color: #1a73e8;
 }
 
 .bike-trips {
   position: sticky;
   display: flex;
   align-items: center;
-  height: 45px;
+  height: 60px;
   top: 0px;
   background-color:white;
+  font-weight: lighter;
   color: #5f6368;
-  margin: -16px;
+  font-family: 'Montserrat', sans-serif;
   padding: 20px 32px;
   box-shadow: 0 0 5px 0 rgb(49, 49, 49);
   border-radius: 2px;
-  width: 1296px;
 
   
 }
-.bike-trips h2 {
+
+.bike-trips h3 {
   background-color: white;
-  margin-left: 30px;
-  width: 400px;
-  
+  margin-left: 40px;
 }
+
 div.links-navbar{
   width: 200px;
 }
@@ -36,10 +35,10 @@ div.links-navbar{
   justify-content: flex-end;
   flex-basis: 400px;
   align-items: center;
-  margin-left: 350px;
+  margin-left: 400px;
   gap: 30px;
   background-color: white;
-  }
+}
 
 div.home{
   display: flex;
@@ -51,152 +50,43 @@ div.home{
   margin-left: 150px;
   height: 300px;
   width: 900px;
-  color: azure;
+  color: white;
+  background-color: #1a73e8;
+  font-family: 'Montserrat', sans-serif;
 
 }
+
 div.home>section>div{
   text-align: center;
   padding: 20px;
-  background-color: azure;
+  background-color: white;
   border-radius: 10px;
 }
-div.home>section>div>h4{
-  background-color: azure;
-  color: #595c5f;
-  
+
+h3{
+  background-color: white;
+  color: #5f6368;
 }
+
 .button-options{
   height: 25px;
   width: 200px;
-  background-color: azure;
+  background-color: white;
   border-radius: 40px;
-  border-color: #1c74e7
+  border-color: #1a73e8
 
 }
+
 div.home>main{
   margin-right:150px;
-  
 }
-
-div.home>main>h1{
-  margin-bottom: 30px;
-}
-
 
 .options{
-  background-color: azure;
+  background-color: white;
   border: solid;
   border-radius: 10px;
   height: 300px;
   width: 300px;
 }
 
-.search-trip{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-left: 20px;
-  gap:5px;
-  background-color: azure;
-  margin-bottom: 20px;
-}
 
-.search-trip>h4{
-  background-color: azure;
-  color: coral;
-  font-size: 1.5rem;
-  
-  
-}
-
-.search-trip>label{
-  background-color: azure;
-  color: coral;
-}
-
-.search-trip>input{
-  background-color: azure;
-  border-radius: 8px;
-  border-width: 2px;
-  border-color: #9fa2a5;
-  height: 2em;
-  
-
-}
-
-.search-trip>input:hover{
-  border-color: coral;
-}
-.search-trip>input:focus{
-  border: none;
-}
-
-.columns {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 25px;
-  margin-left: 30px;
-  width: 1200px;
-}
-
-.columns table{
-  margin-top: 45px;
-}
-
-.bike-trips {
-  position: sticky;
-  display: flex;
-  align-items: center;
-  height: 45px;
-  top: 0px;
-  background-color:white;
-  font-weight: lighter;
-  color: #5f6368;
-  margin: -16px;
-  padding: 20px 32px;
-  box-shadow: 0 0 5px 0 rgb(49, 49, 49);
-  border-radius: 2px;
-  
-}
-.bike-trips h2 {
-  
-  background-color: white;
-  margin-left: 30px;
-}
-
-th {
-  flex-wrap: wrap;
-  top: 0px;
-  background-color: rgb(255, 165, 80) ;
-  font-weight: bold;
-  color: azure ;
-  margin: -16px;
-  padding: 10px 12px;
-  box-shadow: 0 0 5px 0 rgb(49, 49, 49);
-  border-radius: 2px;
-}
-
-.trips td {
-  flex-wrap: wrap;
-  margin-top: 30px;
-  text-align: center;
-  width: 8rem;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0 2px 5px rgb(218, 213, 213);
-  border-radius: 2px;
-  height: 1.5em;
-}
-.trips td:hover{
-  box-shadow: 0 2px 5px coral;
-
-}
-
-.departure:hover {
-  color:white;
-  background-color: #538dd7;
-}
-
- .stations{
-  margin-top: 50px;
- }
