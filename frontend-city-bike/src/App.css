@@ -42,17 +42,18 @@ div.links-navbar{
 
 div.home{
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
   align-content: space-around;
-  margin-top: 100px;
+  margin-top: 200px;
   margin-left: 150px;
   height: 300px;
   width: 900px;
   color: white;
   background-color: #1a73e8;
   font-family: 'Montserrat', sans-serif;
+  gap: 100px 10px;
 
 }
 
@@ -89,4 +90,18 @@ div.home>main{
   width: 300px;
 }
 
+.bike{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  align-items: flex-start;
+  background-color:rgb(252, 255, 86);
+  border: 9px solid white;
+  border-radius: 50px; 
+  box-shadow: 1px 3px 9px rgb(22, 15, 5);
+  margin-top: 25px;
+  height: 10em;
+  width: 10em;
+  }
 

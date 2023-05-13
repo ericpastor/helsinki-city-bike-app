@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import IconBikeFast from '../Icons/IconBikeFast'
 
 const Home = () => {
   const navigate = useNavigate()
@@ -16,10 +17,12 @@ const Home = () => {
         <h1>
           Welcome to the City Bike App!
         </h1>
-        <p>The App where you'll find information about bike trips <br />
-          in Helsiki.
+        <p>Here you will find information about bike trips <br />
+          in Helsinki. Departure stations, return stations, <br />
+          distances, trip time, and more...
         </p>
       </main>
+      <IconBikeFast />
       <section className='options'>
         <div>
           <button className='button-options' onClick={handleClickTrip}>Search a trip!</button>
