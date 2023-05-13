@@ -26,7 +26,7 @@ const TableHeaderTrips = (props) => {
           <TableSortLabel
             active={valueToOrderBy === 'Departure'}
             direction={valueToOrderBy === 'Departure' ? orderDirection : 'asc'}
-            onClick={creatSortHandler('departureStationId')}
+            onClick={creatSortHandler('departureStationName')}
             sx={{ fontWeight: 'bolder', fontSize: 16, fontFamily: 'Montserrat, sans-serif' }}
           >
             Departure
