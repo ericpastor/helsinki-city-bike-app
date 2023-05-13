@@ -1,10 +1,9 @@
 import { gql, useQuery } from '@apollo/client'
-import { useState } from 'react'
-import Stations from './Stations'
+import TableContentStations from './TablesContent/TableContentStations'
 
 const ALL_STATIONS = gql`
-query($limit: Int!, $offset: Int){
-    allStations(limit: $limit, offset: $offset) {
+query{
+    allStations{
      fid
      id
      nimi
@@ -21,24 +20,16 @@ query($limit: Int!, $offset: Int){
     }
    }
 `
-const PAGE_SIZE = 1
+
 const StationList = () => {
-  const [page, setPage] = useState(0)
-  const { data, error, loading } = useQuery(ALL_STATIONS, {
-    variables: {
-      limit: PAGE_SIZE,
-      offset: page * PAGE_SIZE
-    }
-  })
+  const { data, error, loading } = useQuery(ALL_STATIONS)
 
   if (error) return <span style={{ color: 'red' }}>{error}</span>
 
   return (
     <>
-      <div>{loading ? <p>loading...</p> : <Stations stations={data.allStations} />}</div>
-      <button disabled={!page} onClick={() => setPage(prev => prev - 1)}>Previous</button>
-      <span>Page {page + 1}</span>
-      <button disabled={page === 4} onClick={() => setPage(prev => prev + 1)}>Next</button>
+      <div style={{ display: 'flex', flexDirection: 'column', alignContent: 'flex-start', height: '80vh', padding: '50px 0px 20px 10%', backgroundColor: '#1a73e8' }}>{loading ? <p>loading...</p> : <TableContentStations stations={data.allStations} />}</div>
+
     </>
   )
 }
