@@ -13,7 +13,7 @@ query{
      adress
      kaupunki
      stad
-     operaator
+     operaattor
      kapasiteet
      x
      y

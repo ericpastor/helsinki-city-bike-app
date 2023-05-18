@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import TableRow from '@mui/material/TableRow'
 import TableContainer from '@mui/material/TableContainer'
 import TableCell from '@mui/material/TableCell'
@@ -5,7 +6,6 @@ import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TablePagination from '@mui/material/TablePagination'
 import Paper from '@mui/material/Paper'
-import { useState } from 'react'
 import { styled } from '@mui/material/styles'
 import TableHeaderTrips from '../TablesHeaders/TableHeaderTrips'
 
@@ -50,7 +50,7 @@ const TableContentTrips = ({ trips }) => {
   const [orderDirection, setOrderDirection] = useState('asc')
   const [valueToOrderBy, setValueToOrderBy] = useState('Departure')
   const [page, setPage] = useState(0)
-  const [rowsPerPage, setRowsPerPage] = useState(3)
+  const [rowsPerPage, setRowsPerPage] = useState(25)
 
   const locale = navigator.language
   const optionsDistance = {
@@ -83,18 +83,21 @@ const TableContentTrips = ({ trips }) => {
     <>
       <Paper sx={{ width: '90%', overflow: 'hidden', marginBottom: '20' }}>
         <TableContainer>
-          <Table stickyHeader aria-label='sticky table'>
-            <TableHeaderTrips
-              valueToOrderBy={valueToOrderBy}
-              orderDirection={orderDirection}
-              handleRequestSort={handleRequestSort}
-            />
-            <TableBody>
-              {trips &&
+          <div style={{ height: '350px', overflow: 'auto' }}>
+            <Table stickyHeader aria-label='sticky table'>
+              <TableHeaderTrips
+                valueToOrderBy={valueToOrderBy}
+                orderDirection={orderDirection}
+                handleRequestSort={handleRequestSort}
+              />
+
+              <TableBody>
+                {trips &&
                     sortedTrips(trips, getComparator(orderDirection, valueToOrderBy))
                       .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                       .map((trip) => (
-                        <StyledTableRow key={trip.departureStationId}>
+
+                        <StyledTableRow key={trip.id}>
                           <TableCell>
                             {trip.departureStationName}
                           </TableCell>
@@ -113,12 +116,12 @@ const TableContentTrips = ({ trips }) => {
                           </TableCell>
                         </StyledTableRow>
                       ))}
-
-            </TableBody>
-          </Table>
+              </TableBody>
+            </Table>
+          </div>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[3, 5]}
+          rowsPerPageOptions={[25, 50, 100]}
           component='div'
           count={trips.length}
           rowsPerPage={rowsPerPage}

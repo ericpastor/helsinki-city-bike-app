@@ -3,11 +3,11 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
 import Navbar from './components/Navbar'
 import AddTrip from './components/AddTrip'
-import TripList from './components/TripList'
 import FilteredTripList from './components/FilteredTripList'
 import StationList from './components/StationList'
 import SearchStations from './components/SearchStations'
 import CssBaseline from '@mui/material/CssBaseline'
+import TripList from './components/TripList'
 
 const App = () => {
   return (

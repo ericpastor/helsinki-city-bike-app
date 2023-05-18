@@ -2,8 +2,8 @@ import { gql, useQuery } from '@apollo/client'
 import TableContentTrips from './TablesContent/TableContentTrips'
 
 const ALL_TRIPS = gql`
-  query {
-    allTrips {
+ query{
+  allTrips {
       departure
       return
       departureStationName
@@ -15,6 +15,7 @@ const ALL_TRIPS = gql`
     }
   }
 `
+
 const TripList = () => {
   const { data, error, loading } = useQuery(ALL_TRIPS)
 

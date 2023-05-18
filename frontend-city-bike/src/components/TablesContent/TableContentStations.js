@@ -73,14 +73,15 @@ const TableContentStations = ({ stations }) => {
     <>
       <Paper sx={{ width: '90%', overflow: 'hidden', marginBottom: '20' }}>
         <TableContainer>
-          <Table stickyHeader aria-label='sticky table'>
-            <TableHeaderStations
-              valueToOrderBy={valueToOrderBy}
-              orderDirection={orderDirection}
-              handleRequestSort={handleRequestSort}
-            />
-            <TableBody>
-              {stations &&
+          <div style={{ height: '350px', overflow: 'auto' }}>
+            <Table stickyHeader aria-label='sticky table'>
+              <TableHeaderStations
+                valueToOrderBy={valueToOrderBy}
+                orderDirection={orderDirection}
+                handleRequestSort={handleRequestSort}
+              />
+              <TableBody>
+                {stations &&
                     sortedStations(stations, getComparator(orderDirection, valueToOrderBy))
                       .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                       .map((station) => (
@@ -94,11 +95,12 @@ const TableContentStations = ({ stations }) => {
                         </StyledTableRow>
                       ))}
 
-            </TableBody>
-          </Table>
+              </TableBody>
+            </Table>
+          </div>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[3, 5]}
+          rowsPerPageOptions={[25, 50]}
           component='div'
           count={stations.length}
           rowsPerPage={rowsPerPage}

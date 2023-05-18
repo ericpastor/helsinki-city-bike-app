@@ -14,7 +14,7 @@ const SEARCH_STATION = gql`
         adress
         kaupunki
         stad
-        operaator
+        operaattor
         kapasiteet
         x
         y
