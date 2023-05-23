@@ -1,7 +1,6 @@
-const axios = require( "axios")
-
 const Trip = require('./models/trip')
 const Station = require('./models/station')
+
 
 const resolvers = {
     Query: {
@@ -16,16 +15,23 @@ const resolvers = {
         return await Trip.find({})
 
       }
+    
+      },
+
+      findTripByDeparture: async (_, args, context) => {
+        await 
+          
+          Trip.collection.updateMany( {},{$rename: {"Departure":"departure", "Return":"return", "Departure station id": "departureStationId", "Departure station name": "departureStationName", "Return station id":"returnStationId", "Return station name":"returnStationName", "Covered distance (m)":"coveredDistance", "Duration (sec)":"duration" }})
+
+          const { departureStationName } = args;
+      const trips = await Trip.find({})
       
-  
-        if(args.departureStationName && args.returnStationName)
+      return trips.filter((a) => a.departureStationName == departureStationName)
+       
         
-        return Trip.find({departureStationName: args.departureStationName} && {returnStationName: args.returnStationName})
-  
       },
-      findTripByDeparture: async (_, args) => {
-        return Trip.find({departureStationName: args.departureStationName})
-      },
+
+     
 
       allStations: async () => {
         await Station.collection.updateMany({}, {$rename: {"FID": "fid", "ID":"id", "Nimi": "nimi", "Namn":"namn", "Name":"name", "Osoite":"osoite", "Adress":"adress", "Kaupunki":"kaupunki", "Stad": "stad", "Operaattor":"operaattor", "Kapasiteet": "kapasiteet" }})

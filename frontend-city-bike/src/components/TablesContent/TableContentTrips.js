@@ -95,9 +95,9 @@ const TableContentTrips = ({ trips }) => {
                 {trips &&
                     sortedTrips(trips, getComparator(orderDirection, valueToOrderBy))
                       .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                      .map((trip) => (
+                      .map((trip, index) => (
 
-                        <StyledTableRow key={trip.id}>
+                        <StyledTableRow key={index}>
                           <TableCell>
                             {trip.departureStationName}
                           </TableCell>

@@ -50,7 +50,7 @@ const TableContentStations = ({ stations }) => {
   const [orderDirection, setOrderDirection] = useState('asc')
   const [valueToOrderBy, setValueToOrderBy] = useState('Stations')
   const [page, setPage] = useState(0)
-  const [rowsPerPage, setRowsPerPage] = useState(3)
+  const [rowsPerPage, setRowsPerPage] = useState(25)
 
   const handleRequestSort = (event, property) => {
     const isAcending = valueToOrderBy === property && orderDirection === 'asc'

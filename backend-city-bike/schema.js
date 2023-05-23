@@ -28,8 +28,8 @@
 
   type Query {
     tripsCount: Int!
-    allTrips(departureStationName: String, returnStationName: String): [Trip!]!
-    findTripByDeparture(departureStationName: String!):Trip
+    allTrips(departureStationName: String): [Trip!]!
+    findTripByDeparture(departureStationName: String!):[Trip]!
     allStations: [Station!]!
     findStationByName(name: String!):Station
     

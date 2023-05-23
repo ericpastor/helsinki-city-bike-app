@@ -25,7 +25,7 @@ const SEARCH_STATION = gql`
 const SearchStations = () => {
   const [nameInput, setNameInput] = useState('')
 
-  const [getStation, { data }] = useLazyQuery(SEARCH_STATION, {
+  const [getStation, { data, loading }] = useLazyQuery(SEARCH_STATION, {
     variables: {
       name: nameInput
     }
@@ -44,10 +44,9 @@ const SearchStations = () => {
         <input type='text' onChange={(e) => setNameInput(e.target.value)} />
         <button onClick={() => getStation()}> Search!
         </button>
+        {loading && <p>loading...</p>}
         {!nameInput
-
           ? <p>Choose your station</p>
-
           : <><div> {data && <StationDetails station={Object.values(data)} />}</div></>}
       </form>
     </div>
