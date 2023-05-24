@@ -4,10 +4,17 @@ import TableContainer from '@mui/material/TableContainer'
 import TableCell from '@mui/material/TableCell'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
-import TablePagination from '@mui/material/TablePagination'
 import Paper from '@mui/material/Paper'
 import { styled } from '@mui/material/styles'
 import TableHeaderTrips from '../TablesHeaders/TableHeaderTrips'
+import { gql, useQuery } from '@apollo/client'
+
+const TRIP_COUNT = gql`
+query Query {
+  tripsCount
+}
+
+`
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
@@ -46,11 +53,15 @@ const sortedTrips = (rowArray, comparator) => {
   return stabilizedRowArray.map((el) => el[0])
 }
 
-const TableContentTrips = ({ trips }) => {
+const TableContentTrips = ({ trips, page, setPage, rowsPerPage }) => {
   const [orderDirection, setOrderDirection] = useState('asc')
   const [valueToOrderBy, setValueToOrderBy] = useState('Departure')
-  const [page, setPage] = useState(0)
-  const [rowsPerPage, setRowsPerPage] = useState(25)
+  const { data, loading } = useQuery(TRIP_COUNT)
+
+  if (loading) return <p>loading...</p>
+
+  const tripsCount = data.tripsCount
+  console.log(tripsCount)
 
   const locale = navigator.language
   const optionsDistance = {
@@ -68,22 +79,14 @@ const TableContentTrips = ({ trips }) => {
     setValueToOrderBy(property)
   }
 
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage)
-  }
-
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value, 10))
-    setPage(0)
-  }
-
   if (trips === null) return null
 
   return (
     <>
-      <Paper sx={{ width: '90%', overflow: 'hidden', marginBottom: '20' }}>
-        <TableContainer>
-          <div style={{ height: '350px', overflow: 'auto' }}>
+      <Paper sx={{ width: '90%', marginBottom: '20', overflow: 'visible' }}>
+
+        <TableContainer sx={{ height: '480px' }}>
+          <div style={{ height: '100px' }}>
             <Table stickyHeader aria-label='sticky table'>
               <TableHeaderTrips
                 valueToOrderBy={valueToOrderBy}
@@ -92,11 +95,10 @@ const TableContentTrips = ({ trips }) => {
               />
 
               <TableBody>
+
                 {trips &&
                     sortedTrips(trips, getComparator(orderDirection, valueToOrderBy))
-                      .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                       .map((trip, index) => (
-
                         <StyledTableRow key={index}>
                           <TableCell>
                             {trip.departureStationName}
@@ -116,20 +118,19 @@ const TableContentTrips = ({ trips }) => {
                           </TableCell>
                         </StyledTableRow>
                       ))}
+
               </TableBody>
+
             </Table>
           </div>
+
         </TableContainer>
-        <TablePagination
-          rowsPerPageOptions={[25, 50, 100]}
-          component='div'
-          count={trips.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          onPageChange={handleChangePage}
-          onRowsPerPageChange={handleChangeRowsPerPage}
-        />
       </Paper>
+      <div>
+        <button disabled={!page} onClick={() => setPage((prev) => prev - 1)}>Previous</button>
+        <span>Page {page + 1}</span>
+        <button disabled={rowsPerPage * page >= tripsCount} onClick={() => setPage((prev) => prev + 1)}>Next</button>
+      </div>
     </>
   )
 }

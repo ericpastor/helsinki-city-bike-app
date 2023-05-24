@@ -1,4 +1,4 @@
- const typeDefs = `
+const typeDefs = `
   type Trip {
     departure: String!
     return: String!
@@ -28,8 +28,8 @@
 
   type Query {
     tripsCount: Int!
-    allTrips(departureStationName: String): [Trip!]!
-    findTripByDeparture(departureStationName: String!):[Trip]!
+    allTrips(offset: Int!, limit: Int!): [Trip!]!
+    findTripByDeparture(departureStationName: String!, limit: Int!, offset: Int!):[Trip]!
     allStations: [Station!]!
     findStationByName(name: String!):Station
     
