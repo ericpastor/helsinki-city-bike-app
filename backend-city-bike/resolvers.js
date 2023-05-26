@@ -90,7 +90,7 @@ const resolvers = {
         }
       )
 
-      return await Station.findOne({ name: args.name })
+      return await Station.findOne({ name: {$regex: args.name.toLowerCase(), "$options": "i"}})
     },
   },
 }
