@@ -3,8 +3,8 @@ import { useState } from 'react'
 import StationDetails from './StationDetails'
 
 const SEARCH_STATION = gql`
-    query($name: String!){
-        findStationByName(name: $name) {
+    query($osoite: String!){
+        findStationByName(osoite: $osoite) {
         fid
         id
         nimi
@@ -27,7 +27,7 @@ const SearchStations = () => {
 
   const [getStation, { data, loading }] = useLazyQuery(SEARCH_STATION, {
     variables: {
-      name: nameInput
+      osoite: nameInput
     }
   })
 
@@ -41,7 +41,7 @@ const SearchStations = () => {
     <div className='search'>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Station:</label>
+          <label>adress:</label>
           <input
             type='text'
             value={nameInput}
@@ -53,7 +53,7 @@ const SearchStations = () => {
       </form>
       {!nameInput
         ? (
-          <p className='info'>choose your station...</p>
+          <p className='info'>type the street name and search...</p>
           )
         : (
           <>

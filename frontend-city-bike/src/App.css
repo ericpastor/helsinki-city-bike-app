@@ -228,3 +228,14 @@ div.home>main{
 .info{
   color: #8bb3e9;
 }
+.station-details{
+  color: #ffc107;
+  width: fit-content;
+}
+.station-details>li:hover{
+  color: white;
+  font-size: 20px;
+}
+.station-details>li>span{
+  font-weight: bold;
+}

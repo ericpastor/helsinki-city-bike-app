@@ -90,7 +90,7 @@ const resolvers = {
         }
       )
 
-      return await Station.findOne({ name: {$regex: args.name.toLowerCase(), "$options": "i"}})
+      return await Station.findOne({ osoite: {$regex: args.osoite.toLowerCase().split(" ", 4).join(" "), "$options": "i"}})
     },
   },
 }

@@ -31,7 +31,7 @@ const typeDefs = `
     allTrips(offset: Int!, limit: Int!): [Trip!]!
     findTripByDeparture(departureStationName: String!, limit: Int!, offset: Int!):[Trip]!
     allStations: [Station!]!
-    findStationByName(name: String!):Station
+    findStationByName(osoite: String!):Station
     
   }
 `
