@@ -1,13 +1,12 @@
 import TableRow from '@mui/material/TableRow'
-import TableContainer from '@mui/material/TableContainer'
 import TableCell from '@mui/material/TableCell'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TablePagination from '@mui/material/TablePagination'
-import Paper from '@mui/material/Paper'
 import { useState } from 'react'
 import { styled } from '@mui/material/styles'
 import TableHeaderStations from '../TablesHeaders/TableHeaderStations'
+import { StyledPaper, StyledTableContainer } from '../../styledComponents/StyledLink'
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
@@ -71,9 +70,9 @@ const TableContentStations = ({ stations }) => {
 
   return (
     <>
-      <Paper sx={{ width: '90%', overflow: 'hidden', marginBottom: '20' }}>
-        <TableContainer>
-          <div style={{ height: '350px', overflow: 'auto' }}>
+      <StyledPaper>
+        <StyledTableContainer>
+          <div className='table.container'>
             <Table stickyHeader aria-label='sticky table'>
               <TableHeaderStations
                 valueToOrderBy={valueToOrderBy}
@@ -98,7 +97,7 @@ const TableContentStations = ({ stations }) => {
               </TableBody>
             </Table>
           </div>
-        </TableContainer>
+        </StyledTableContainer>
         <TablePagination
           rowsPerPageOptions={[25, 50]}
           component='div'
@@ -108,7 +107,7 @@ const TableContentStations = ({ stations }) => {
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
-      </Paper>
+      </StyledPaper>
     </>
   )
 }

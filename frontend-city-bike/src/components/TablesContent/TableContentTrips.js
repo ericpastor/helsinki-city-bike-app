@@ -1,13 +1,11 @@
 import { useState } from 'react'
 import TableRow from '@mui/material/TableRow'
-import TableContainer from '@mui/material/TableContainer'
-import TableCell from '@mui/material/TableCell'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
-import Paper from '@mui/material/Paper'
 import { styled } from '@mui/material/styles'
 import TableHeaderTrips from '../TablesHeaders/TableHeaderTrips'
 import { gql, useQuery } from '@apollo/client'
+import { StyledPaper, StyledTableCell, StyledTableContainer } from '../../styledComponents/StyledLink'
 
 const TRIP_COUNT = gql`
 query Query {
@@ -24,7 +22,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:last-child td, &:last-child th': {
     border: 0
   }
-
 }))
 
 function descendingComparator (a, b, orderBy) {
@@ -58,7 +55,7 @@ const TableContentTrips = ({ trips, page, setPage, rowsPerPage }) => {
   const [valueToOrderBy, setValueToOrderBy] = useState('Departure')
   const { data, loading } = useQuery(TRIP_COUNT)
 
-  if (loading) return <p>loading...</p>
+  if (loading) return <p className='info'>loading...</p>
 
   const tripsCount = data.tripsCount
   console.log(tripsCount)
@@ -81,12 +78,13 @@ const TableContentTrips = ({ trips, page, setPage, rowsPerPage }) => {
 
   if (trips === null) return null
 
+  if (trips.length === 0) return <p className='message-error'>Sorry, no trips with this station name. Try again!</p>
+
   return (
     <>
-      <Paper sx={{ width: '90%', marginBottom: '20', overflow: 'visible' }}>
-
-        <TableContainer sx={{ height: '480px' }}>
-          <div style={{ height: '100px' }}>
+      <StyledPaper>
+        <StyledTableContainer>
+          <div className='table.container'>
             <Table stickyHeader aria-label='sticky table'>
               <TableHeaderTrips
                 valueToOrderBy={valueToOrderBy}
@@ -100,22 +98,22 @@ const TableContentTrips = ({ trips, page, setPage, rowsPerPage }) => {
                     sortedTrips(trips, getComparator(orderDirection, valueToOrderBy))
                       .map((trip, index) => (
                         <StyledTableRow key={index}>
-                          <TableCell>
+                          <StyledTableCell>
                             {trip.departureStationName}
-                          </TableCell>
-                          <TableCell>
+                          </StyledTableCell>
+                          <StyledTableCell>
                             {trip.returnStationName}
-                          </TableCell>
-                          <TableCell>
+                          </StyledTableCell>
+                          <StyledTableCell>
                             {new Intl.NumberFormat(locale, optionsDistance).format(
                               (trip.coveredDistance / 1000).toFixed(2)
                             )}
-                          </TableCell>
-                          <TableCell>
+                          </StyledTableCell>
+                          <StyledTableCell>
                             {new Intl.NumberFormat(locale, optionsTime).format(
                               (trip.duration / 60).toFixed(2)
                             )}
-                          </TableCell>
+                          </StyledTableCell>
                         </StyledTableRow>
                       ))}
 
@@ -124,12 +122,12 @@ const TableContentTrips = ({ trips, page, setPage, rowsPerPage }) => {
             </Table>
           </div>
 
-        </TableContainer>
-      </Paper>
-      <div>
-        <button disabled={!page} onClick={() => setPage((prev) => prev - 1)}>Previous</button>
-        <span>Page {page + 1}</span>
-        <button disabled={rowsPerPage * page >= tripsCount} onClick={() => setPage((prev) => prev + 1)}>Next</button>
+        </StyledTableContainer>
+      </StyledPaper>
+      <div className='pagination'>
+        <button className='pagination-buttons' disabled={!page} onClick={() => setPage((prev) => prev - 1)}>Previous</button>
+        <p>Page {page + 1}</p>
+        <button className='pagination-buttons' disabled={rowsPerPage * page >= tripsCount} onClick={() => setPage((prev) => prev + 1)}>Next</button>
       </div>
     </>
   )

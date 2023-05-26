@@ -1,8 +1,8 @@
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import TableCell, { tableCellClasses } from '@mui/material/TableCell'
-import TableSortLabel from '@mui/material/TableSortLabel'
 import { styled } from '@mui/material/styles'
+import { StyledTableSortLabel } from '../../styledComponents/StyledLink'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -23,47 +23,47 @@ const TableHeaderTrips = (props) => {
     <TableHead>
       <TableRow>
         <StyledTableCell key='Departure'>
-          <TableSortLabel
+          <StyledTableSortLabel
             active={valueToOrderBy === 'Departure'}
             direction={valueToOrderBy === 'Departure' ? orderDirection : 'asc'}
             onClick={creatSortHandler('departureStationName')}
-            sx={{ fontWeight: 'bolder', fontSize: 16, fontFamily: 'Montserrat, sans-serif' }}
+
           >
             Departure
-          </TableSortLabel>
+          </StyledTableSortLabel>
         </StyledTableCell>
 
         <StyledTableCell key='Return'>
-          <TableSortLabel
+          <StyledTableSortLabel
             active={valueToOrderBy === 'Return'}
             direction={valueToOrderBy === 'Return' ? orderDirection : 'asc'}
             onClick={creatSortHandler('returnStationName')}
-            sx={{ fontWeight: 'bolder', fontSize: 16, fontFamily: 'Montserrat, sans-serif' }}
+
           >
             Return
-          </TableSortLabel>
+          </StyledTableSortLabel>
         </StyledTableCell>
 
         <StyledTableCell key='Distance'>
-          <TableSortLabel
+          <StyledTableSortLabel
             active={valueToOrderBy === 'Distance'}
             direction={valueToOrderBy === 'Distance' ? orderDirection : 'asc'}
             onClick={creatSortHandler('coveredDistance')}
-            sx={{ fontWeight: 'bolder', fontSize: 16, fontFamily: 'Montserrat, sans-serif' }}
+
           >
             Distance
-          </TableSortLabel>
+          </StyledTableSortLabel>
         </StyledTableCell>
 
         <StyledTableCell key='Time'>
-          <TableSortLabel
+          <StyledTableSortLabel
             active={valueToOrderBy === 'Time'}
             direction={valueToOrderBy === 'Time' ? orderDirection : 'asc'}
             onClick={creatSortHandler('duration')}
-            sx={{ fontWeight: 'bolder', fontSize: 16, fontFamily: 'Montserrat, sans-serif' }}
+
           >
             Time
-          </TableSortLabel>
+          </StyledTableSortLabel>
         </StyledTableCell>
       </TableRow>
     </TableHead>

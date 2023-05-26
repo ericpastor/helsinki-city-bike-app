@@ -43,49 +43,38 @@ const FilteredTripList = () => {
 
   return (
     <>
-      <div className='search-trip'>
-        <h4>Search a Trip</h4>
+      <div className='search'>
         <form onSubmit={handleSubmit}>
-          <label>Departure Station</label>
-
-          <input
-            type='text'
-            value={departureInput}
-            placeholder='Pasilan Asema, Töölöntulli, Teljäntie,...'
-            onChange={(e) => setDepartureInput(e.target.value)}
-          />
-
-          <button onClick={() => getTrips()}> Search!</button>
-          {loading && <p>loading...</p>}
-          {!departureInput
-            ? (
-              <p>Choose a departure and return Station</p>
-              )
-            : (
-              <>
-                <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignContent: 'flex-start',
-                    height: '80vh',
-                    padding: '50px 0px 20px 10%',
-                    backgroundColor: '#1a73e8'
-                  }}
-                >
-                  {' '}
-                  {data && (
-                    <TableContentTrips
-                      trips={data.findTripByDeparture}
-                      page={page}
-                      setPage={setPage}
-                      rowsPerPage={rowsPerPage}
-                    />
-                  )}
-                </div>
-              </>
-              )}
+          <div>
+            <label>Departure Station:</label>
+            <input
+              type='text'
+              value={departureInput}
+              placeholder='Pasilan Asema, Töölöntulli, Teljäntie,...'
+              onChange={(e) => setDepartureInput(e.target.value)}
+            />
+            <button onClick={() => getTrips()}> Search!</button>
+          </div>
         </form>
+        {!departureInput
+          ? (
+            <p className='info'>choose a departure station...</p>
+            )
+          : (
+            <>
+              <div className='tables' style={{ marginTop: '0px' }}>
+                {loading && <p className='info'>loading...</p>}
+                {data && (
+                  <TableContentTrips
+                    trips={data.findTripByDeparture}
+                    page={page}
+                    setPage={setPage}
+                    rowsPerPage={rowsPerPage}
+                  />
+                )}
+              </div>
+            </>
+            )}
       </div>
     </>
   )

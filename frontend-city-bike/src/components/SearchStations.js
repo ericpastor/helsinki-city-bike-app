@@ -38,17 +38,31 @@ const SearchStations = () => {
   }
 
   return (
-    <div style={{ marginTop: '50px' }}>
-      <h4>Search a Station</h4>
+    <div className='search'>
       <form onSubmit={handleSubmit}>
-        <input type='text' onChange={(e) => setNameInput(e.target.value)} />
-        <button onClick={() => getStation()}> Search!
-        </button>
-        {loading && <p>loading...</p>}
-        {!nameInput
-          ? <p>Choose your station</p>
-          : <><div> {data && <StationDetails station={Object.values(data)} />}</div></>}
+        <div>
+          <label>Station:</label>
+          <input
+            type='text'
+            value={nameInput}
+            placeholder='Pasilan Asema, Töölöntulli, Teljäntie,...'
+            onChange={(e) => setNameInput(e.target.value)}
+          />
+          <button onClick={() => getStation()}> Search!</button>
+        </div>
       </form>
+      {!nameInput
+        ? (
+          <p className='info'>choose your station...</p>
+          )
+        : (
+          <>
+            <div>
+              {loading && <p className='info'>loading...</p>}
+              {data &&
+                <StationDetails station={Object.values(data)} />}
+            </div>
+          </>)}
     </div>
   )
 }

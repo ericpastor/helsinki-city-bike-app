@@ -1,8 +1,8 @@
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import TableCell, { tableCellClasses } from '@mui/material/TableCell'
-import TableSortLabel from '@mui/material/TableSortLabel'
 import { styled } from '@mui/material/styles'
+import { StyledTableSortLabel } from '../../styledComponents/StyledLink'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -23,24 +23,22 @@ const TableHeaderStations = (props) => {
     <TableHead>
       <TableRow>
         <StyledTableCell key='Stations'>
-          <TableSortLabel
+          <StyledTableSortLabel
             active={valueToOrderBy === 'Stations'}
             direction={valueToOrderBy === 'Stations' ? orderDirection : 'asc'}
             onClick={creatSortHandler('name')}
-            sx={{ fontWeight: 'bolder', fontSize: 16, fontFamily: 'Montserrat, sans-serif' }}
           >
             Departure
-          </TableSortLabel>
+          </StyledTableSortLabel>
         </StyledTableCell>
         <StyledTableCell key='Adress'>
-          <TableSortLabel
+          <StyledTableSortLabel
             active={valueToOrderBy === 'Adress'}
             direction={valueToOrderBy === 'Adress' ? orderDirection : 'asc'}
             onClick={creatSortHandler('osoite')}
-            sx={{ fontWeight: 'bolder', fontSize: 16, fontFamily: 'Montserrat, sans-serif' }}
           >
             Adress
-          </TableSortLabel>
+          </StyledTableSortLabel>
         </StyledTableCell>
       </TableRow>
     </TableHead>

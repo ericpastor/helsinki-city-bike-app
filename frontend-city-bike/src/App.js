@@ -11,18 +11,20 @@ import TripList from './components/TripList'
 
 const App = () => {
   return (
-    <div>
+    <>
       <CssBaseline />
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/trips' element={<TripList />} />
-        <Route path='/searchTrip' element={<FilteredTripList />} />
-        <Route path='/stations' element={<StationList />} />
-        <Route path='/addTrip' element={<AddTrip />} />
-        <Route path='/stationDetails' element={<SearchStations />} />
-      </Routes>
-    </div>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/trips' element={<TripList />} />
+          <Route path='/searchTrip' element={<FilteredTripList />} />
+          <Route path='/stations' element={<StationList />} />
+          <Route path='/addTrip' element={<AddTrip />} />
+          <Route path='/stationDetails' element={<SearchStations />} />
+        </Routes>
+      </div>
+    </>
   )
 }
 

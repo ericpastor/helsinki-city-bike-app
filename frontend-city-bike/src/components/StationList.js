@@ -28,7 +28,7 @@ const StationList = () => {
 
   return (
     <>
-      <div style={{ display: 'flex', flexDirection: 'column', alignContent: 'flex-start', height: '80vh', padding: '50px 0px 20px 10%', backgroundColor: '#1a73e8' }}>{loading ? <p>loading...</p> : <TableContentStations stations={data.allStations} />}</div>
+      <div className='tables'>{loading ? <p className='info'>loading...</p> : <TableContentStations stations={data.allStations} />}</div>
 
     </>
   )

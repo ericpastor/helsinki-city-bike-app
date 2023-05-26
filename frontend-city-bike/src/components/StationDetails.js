@@ -1,13 +1,15 @@
 const StationDetails = ({ station }) => {
-  if (station === null) { return null }
+  let stationFound = []
+  try {
+    stationFound = Object.values(station).map((s) => {
+      return <ul key={s.id}><li>{s.name}</li> <li>{s.osoite}</li></ul>
+    })
+  } catch (error) {
+    return <p className='message-error'>Sorry we don't have this station yet! <br /> Try again! </p>
+  }
   return (
-    <div style={{ marginTop: '50px' }}>
-      {station && (
-        <div>
-          {Object.values(station).map((s) => {
-            return <ul key={s.id}><li>{s.name}</li> <li>{s.osoite}</li></ul>
-          })}
-        </div>)}
+    <div className='station'>
+      {stationFound}
     </div>
   )
 }

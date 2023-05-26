@@ -5,62 +5,31 @@ div#root{
   background-color: #1a73e8;
 }
 
-.bike-trips {
-  position: sticky;
-  display: flex;
-  align-items: center;
-  height: 60px;
-  top: 0px;
-  background-color:white;
-  font-weight: lighter;
-  color: #5f6368;
-  font-family: 'Montserrat', sans-serif;
-  padding: 20px 32px;
-  box-shadow: 0 0 5px 0 rgb(49, 49, 49);
-  border-radius: 2px;
-  
-}
-
-.bike-trips h3 {
+.appbar {
   background-color: white;
-  margin-left: 40px;
 }
 
 div.links-navbar{
-  width: 200px;
+  width: 100px;
 }
 .links-navbar {
   display: flex;
   justify-content: flex-end;
   flex-basis: 400px;
   align-items: center;
-  margin-left: 400px;
+  margin-left: 300px;
   gap: 30px;
   background-color: white;
 }
 
-div.home{
+.section-buttons{
+  margin-top: 75px;
+  margin-left: 25px;
   display: flex;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  align-content: space-around;
-  margin-top: 200px;
-  margin-left: 150px;
-  height: 300px;
-  width: 900px;
-  color: white;
-  background-color: #1a73e8;
-  font-family: 'Montserrat', sans-serif;
-  gap: 100px 10px;
-
-}
-
-div.home>section>div{
-  text-align: center;
-  padding: 20px;
-  background-color: white;
-  border-radius: 10px;
+  gap: 55px;
+  flex-direction: row;
 }
 
 h3{
@@ -69,11 +38,21 @@ h3{
 }
 
 .button-options{
-  height: 25px;
-  width: 200px;
-  background-color: white;
-  border-radius: 40px;
-  border-color: #1a73e8
+  height: 55px;
+  width: 250px;
+  background-color: rgb(252, 255, 86);
+  border: 5px solid white;
+  border-radius: 30px; 
+  color: rgba(243, 157, 43);
+  font-weight: bolder;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 1px 3px 9px rgb(22, 15, 5);
+}
+
+.button-options:hover {
+  border: 5px solid #81ace4;
+  color: #1a73e8
 
 }
 
@@ -92,15 +71,160 @@ div.home>main{
 .bike{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-content: space-around;
-  align-items: flex-start;
   background-color:rgb(252, 255, 86);
-  border: 9px solid white;
-  border-radius: 50px; 
+  border: 14px solid white;
+  border-radius: 40px; 
   box-shadow: 1px 3px 9px rgb(22, 15, 5);
   margin-top: 25px;
   height: 10em;
   width: 10em;
   }
 
+  .bike-appbar{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    background-color:rgb(252, 255, 86);
+    border: 4px solid white;
+    border-radius: 10px; 
+    box-shadow: 0.5px 1.5px 4.5px rgb(22, 15, 5);
+    height: 2em;
+    width: 2em;
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+
+  @media screen and (max-width: 1204px) {
+    .links-navbar {margin-left: 100px;}
+ }
+
+ .tables{
+  display: flex; 
+  flex-direction: column; 
+  align-content: flex-start;
+  height: 80vh; 
+  padding: 25px 0px 20px 10%; 
+  background-color: #1a73e8;
+  margin-top: 45px;
+  margin-bottom: 5px;
+ }
+ 
+ .table-container {
+  height: 100px;
+ 
+ }
+
+ .pagination-buttons {
+  height: 35px;
+  width: 100px;
+  border: 1.5px solid white;
+  border-radius: 30px; 
+  font-weight: lighter;
+  font-size: 12.5px;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 1px 3px 9px rgb(22, 15, 5);
+  background-color: #ffc107;
+  color: #fff;
+ }
+
+ .pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 30px;
+  margin-top: 3px;
+  margin-right: 115px;
+ }
+
+ div.pagination>p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: white;
+ }
+
+ .pagination-buttons:hover {
+  color:#1a73e8;
+  font-weight: bolder;
+  border: 1.5px solid #4b90eb;
+
+ }
+
+ @media screen and (max-width: 570px) {
+  .pagination-buttons {
+    height: 25px;
+    width: 80px;
+    border: 1.5px solid white;
+    border-radius: 20px; 
+    font-size: 9.5px;
+   }
+
+   .pagination {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: 20px;
+    margin-top: 3px;
+    margin-right: 70px;
+   }
+ }
+
+ .search {
+  position: absolute;
+  display: inline-block;
+  top: 20%;
+  left: 5%;
+  font-family: 'Montserrat', sans-serif;
+  width: 90%;
+ }
+ .search>form>div{
+  display: inline-block;
+  margin-left: 10%;
+ }
+ .search>form>div>label{
+  padding-right: 20px;
+  color: white;
+  font-weight: bold;
+ }
+ .search>form>div>input{
+  height: 25px;
+  padding-right: 30px;
+  border-radius: 8px;
+  border: #1a73e8;
+  font-family: 'Montserrat', sans-serif;
+ }
+ .search>form>div>input:hover{
+  color:#1a73e8;
+  font-weight: bolder;
+  border: 1.5px solid #4b90eb;
+  box-shadow: 1px 3px 9px rgb(22, 15, 5);
+  font-family: 'Montserrat', sans-serif;
+ }
+ .search>form>div>button{
+  height: 30px;
+  width: 100px;
+  border: 1.5px solid white;
+  border-radius: 30px; 
+  font-weight: lighter;
+  font-size: 12.5px;
+  background-color: #ffc107;
+  color: #fff;
+  margin-left: 30px;
+ }
+ .search>form>div>button:hover {
+  color:#1a73e8;
+  font-weight: bolder;
+  border: 1.5px solid #4b90eb;
+  box-shadow: 1px 3px 9px rgb(22, 15, 5);
+  font-family: 'Montserrat', sans-serif;
+ }
+.station{
+  margin-top: 50px;
+}
+.message-error{
+  font-weight: bold;
+  color: white;
+}
+.info{
+  color: #8bb3e9;
+}
