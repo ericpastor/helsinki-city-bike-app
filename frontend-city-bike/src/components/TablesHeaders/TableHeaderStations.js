@@ -28,16 +28,36 @@ const TableHeaderStations = (props) => {
             direction={valueToOrderBy === 'Stations' ? orderDirection : 'asc'}
             onClick={creatSortHandler('name')}
           >
-            Departure
+            Station
           </StyledTableSortLabel>
         </StyledTableCell>
-        <StyledTableCell key='Adress'>
+
+        <StyledTableCell key='Address'>
           <StyledTableSortLabel
-            active={valueToOrderBy === 'Adress'}
-            direction={valueToOrderBy === 'Adress' ? orderDirection : 'asc'}
+            active={valueToOrderBy === 'Address'}
+            direction={valueToOrderBy === 'Address' ? orderDirection : 'asc'}
             onClick={creatSortHandler('osoite')}
           >
-            Adress
+            Address
+          </StyledTableSortLabel>
+        </StyledTableCell>
+
+        <StyledTableCell key='City'>
+          <StyledTableSortLabel
+            active={valueToOrderBy === 'City'}
+            direction={valueToOrderBy === 'City' ? orderDirection : 'asc'}
+            onClick={creatSortHandler('kaupunki')}
+          >
+            City
+          </StyledTableSortLabel>
+        </StyledTableCell>
+        <StyledTableCell key='Capacity'>
+          <StyledTableSortLabel
+            active={valueToOrderBy === 'Capacity'}
+            direction={valueToOrderBy === 'Capacity' ? orderDirection : 'asc'}
+            onClick={creatSortHandler('kapasiteet')}
+          >
+            Capacity
           </StyledTableSortLabel>
         </StyledTableCell>
       </TableRow>

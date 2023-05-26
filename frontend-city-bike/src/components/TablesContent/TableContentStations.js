@@ -91,6 +91,12 @@ const TableContentStations = ({ stations }) => {
                           <TableCell>
                             {station.osoite}
                           </TableCell>
+                          <TableCell>
+                            {station.kaupunki === ' ' ? 'Helsinki' : station.kaupunki}
+                          </TableCell>
+                          <TableCell>
+                            {station.kapasiteet}
+                          </TableCell>
                         </StyledTableRow>
                       ))}
 

@@ -93,7 +93,6 @@ const TableContentTrips = ({ trips, page, setPage, rowsPerPage }) => {
               />
 
               <TableBody>
-
                 {trips &&
                     sortedTrips(trips, getComparator(orderDirection, valueToOrderBy))
                       .map((trip, index) => (

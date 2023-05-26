@@ -41,11 +41,11 @@ const SearchStations = () => {
     <div className='search'>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>adress:</label>
+          <label>address:</label>
           <input
             type='text'
             value={nameInput}
-            placeholder='Pasilan Asema, Töölöntulli, Teljäntie,...'
+            placeholder='Kaivokatu, Töölönkatu, Teljäntie,...'
             onChange={(e) => setNameInput(e.target.value)}
           />
           <button onClick={() => getStation()}> Search!</button>
