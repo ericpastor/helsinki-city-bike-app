@@ -1,5 +1,9 @@
 import { Toolbar, useTheme, useMediaQuery } from '@mui/material'
-import { StyledAppBar, StyledLink, StyledTypography } from '../styledComponents/StyledLink'
+import {
+  StyledAppBar,
+  StyledLink,
+  StyledTypography
+} from '../styledComponents/StyledLink'
 import DrawerComponent from './Drawer'
 import IconAppBar from '../Icons/IconAppBar'
 
@@ -26,7 +30,6 @@ const Navbar = () => {
             )}
       </Toolbar>
     </StyledAppBar>
-
   )
 }
 

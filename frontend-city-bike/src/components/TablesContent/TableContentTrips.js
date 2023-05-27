@@ -5,13 +5,16 @@ import TableBody from '@mui/material/TableBody'
 import { styled } from '@mui/material/styles'
 import TableHeaderTrips from '../TablesHeaders/TableHeaderTrips'
 import { gql, useQuery } from '@apollo/client'
-import { StyledPaper, StyledTableCell, StyledTableContainer } from '../../styledComponents/StyledLink'
+import {
+  StyledPaper,
+  StyledTableCell,
+  StyledTableContainer
+} from '../../styledComponents/StyledLink'
 
 const TRIP_COUNT = gql`
-query Query {
-  tripsCount
-}
-
+  query Query {
+    tripsCount
+  }
 `
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
@@ -78,7 +81,13 @@ const TableContentTrips = ({ trips, page, setPage, rowsPerPage }) => {
 
   if (trips === null) return null
 
-  if (trips.length === 0) return <p className='message-error'>Sorry, no trips with this station name. Try again!</p>
+  if (trips.length === 0) {
+    return (
+      <p className='message-error'>
+        Sorry, no trips with this station name. Try again!
+      </p>
+    )
+  }
 
   return (
     <>
@@ -94,39 +103,50 @@ const TableContentTrips = ({ trips, page, setPage, rowsPerPage }) => {
 
               <TableBody>
                 {trips &&
-                    sortedTrips(trips, getComparator(orderDirection, valueToOrderBy))
-                      .map((trip, index) => (
-                        <StyledTableRow key={index}>
-                          <StyledTableCell>
-                            {trip.departureStationName}
-                          </StyledTableCell>
-                          <StyledTableCell>
-                            {trip.returnStationName}
-                          </StyledTableCell>
-                          <StyledTableCell>
-                            {new Intl.NumberFormat(locale, optionsDistance).format(
-                              (trip.coveredDistance / 1000).toFixed(2)
-                            )}
-                          </StyledTableCell>
-                          <StyledTableCell>
-                            {new Intl.NumberFormat(locale, optionsTime).format(
-                              (trip.duration / 60).toFixed(2)
-                            )}
-                          </StyledTableCell>
-                        </StyledTableRow>
-                      ))}
-
+                  sortedTrips(
+                    trips,
+                    getComparator(orderDirection, valueToOrderBy)
+                  ).map((trip, index) => (
+                    <StyledTableRow key={index}>
+                      <StyledTableCell>
+                        {trip.departureStationName}
+                      </StyledTableCell>
+                      <StyledTableCell>
+                        {trip.returnStationName}
+                      </StyledTableCell>
+                      <StyledTableCell>
+                        {new Intl.NumberFormat(locale, optionsDistance).format(
+                          (trip.coveredDistance / 1000).toFixed(2)
+                        )}
+                      </StyledTableCell>
+                      <StyledTableCell>
+                        {new Intl.NumberFormat(locale, optionsTime).format(
+                          (trip.duration / 60).toFixed(2)
+                        )}
+                      </StyledTableCell>
+                    </StyledTableRow>
+                  ))}
               </TableBody>
-
             </Table>
           </div>
-
         </StyledTableContainer>
       </StyledPaper>
       <div className='pagination'>
-        <button className='pagination-buttons' disabled={!page} onClick={() => setPage((prev) => prev - 1)}>Previous</button>
+        <button
+          className='pagination-buttons'
+          disabled={!page}
+          onClick={() => setPage((prev) => prev - 1)}
+        >
+          Previous
+        </button>
         <p>Page {page + 1}</p>
-        <button className='pagination-buttons' disabled={rowsPerPage * page >= tripsCount} onClick={() => setPage((prev) => prev + 1)}>Next</button>
+        <button
+          className='pagination-buttons'
+          disabled={rowsPerPage * page >= tripsCount}
+          onClick={() => setPage((prev) => prev + 1)}
+        >
+          Next
+        </button>
       </div>
     </>
   )

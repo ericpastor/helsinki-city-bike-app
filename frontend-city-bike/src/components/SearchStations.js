@@ -3,23 +3,23 @@ import { useState } from 'react'
 import StationDetails from './StationDetails'
 
 const SEARCH_STATION = gql`
-    query($osoite: String!){
-        findStationByName(osoite: $osoite) {
-        fid
-        id
-        nimi
-        namn
-        name
-        osoite
-        adress
-        kaupunki
-        stad
-        operaattor
-        kapasiteet
-        x
-        y
-        }
+  query ($osoite: String!) {
+    findStationByName(osoite: $osoite) {
+      fid
+      id
+      nimi
+      namn
+      name
+      osoite
+      adress
+      kaupunki
+      stad
+      operaattor
+      kapasiteet
+      x
+      y
     }
+  }
 `
 
 const SearchStations = () => {
@@ -31,7 +31,9 @@ const SearchStations = () => {
     }
   })
 
-  if (data === null) { return null }
+  if (data === null) {
+    return null
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -59,10 +61,10 @@ const SearchStations = () => {
           <>
             <div>
               {loading && <p className='info'>loading...</p>}
-              {data &&
-                <StationDetails station={Object.values(data)} />}
+              {data && <StationDetails station={Object.values(data)} />}
             </div>
-          </>)}
+          </>
+          )}
     </div>
   )
 }

@@ -1,16 +1,24 @@
-import { AppBar, Grid, Typography, Paper, TableContainer, TableCell, TableSortLabel } from '@mui/material'
+import {
+  AppBar,
+  Grid,
+  Typography,
+  Paper,
+  TableContainer,
+  TableCell,
+  TableSortLabel
+} from '@mui/material'
 import styled from '@emotion/styled'
 import { Link } from 'react-router-dom'
 
 export const StyledLink = styled(Link)`
   color: #5f6368;
   text-decoration: none;
-  background-color:white;
+  background-color: white;
   color: #5f6368;
   font-family: 'Montserrat', sans-serif;
-  &:hover{
+  &:hover {
     color: coral;
-  } 
+  }
 `
 
 export const StyledAppBar = styled(AppBar)`
@@ -36,8 +44,8 @@ export const StyledGrid = styled(Grid)`
 `
 
 export const StyledPaper = styled(Paper)`
-  width: 90%; 
-  marginBottom: 20; 
+  width: 90%;
+  marginbottom: 20;
   overflow: visible;
 `
 
@@ -49,16 +57,15 @@ export const StyledTableContainer = styled(TableContainer)`
   }
 `
 export const StyledTableCell = styled(TableCell)`
-@media screen and (max-width: 570px) {
-  font-size: 10px;
-}
+  @media screen and (max-width: 570px) {
+    font-size: 10px;
+  }
 `
 export const StyledTableSortLabel = styled(TableSortLabel)`
-font-weight: bolder; 
-font-size: 16px;
-font-family: 'Montserrat', sans-serif;
-@media screen and (max-width: 570px) {
-  font-size: 12px;
-
-}
+  font-weight: bolder;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  @media screen and (max-width: 570px) {
+    font-size: 12px;
+  }
 `

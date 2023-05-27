@@ -17,11 +17,11 @@ const Home = () => {
     <Grid sx={{ marginTop: '50px' }} container spacing={2}>
       <StyledGrid item xs={8}>
         <div>
-          <h1>
-            Welcome to the City Bike App!
-          </h1>
+          <h1>Welcome to the City Bike App!</h1>
           <p>
-            Here you will find information about bike trips in Helsinki. <br /> Departure stations, return stations, distances, trip time, and more...
+            Here you will find information about bike trips in Helsinki. <br />
+            Departure stations, return stations, distances, trip time, and
+            more...
           </p>
         </div>
       </StyledGrid>
@@ -29,11 +29,13 @@ const Home = () => {
         <IconBikeFast />
       </Grid>
       <div className='section-buttons'>
+        <button className='button-options' onClick={handleClickTrip}>
+          Search a trip!
+        </button>
 
-        <button className='button-options' onClick={handleClickTrip}>Search a trip!</button>
-
-        <button className='button-options' onClick={handleClickStation}>Search a Station!</button>
-
+        <button className='button-options' onClick={handleClickStation}>
+          Search a Station!
+        </button>
       </div>
     </Grid>
   )

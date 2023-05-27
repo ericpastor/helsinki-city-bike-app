@@ -19,7 +19,6 @@ const TableHeaderTrips = (props) => {
   }
 
   return (
-
     <TableHead>
       <TableRow>
         <StyledTableCell key='Departure'>
@@ -27,7 +26,6 @@ const TableHeaderTrips = (props) => {
             active={valueToOrderBy === 'Departure'}
             direction={valueToOrderBy === 'Departure' ? orderDirection : 'asc'}
             onClick={creatSortHandler('departureStationName')}
-
           >
             Departure
           </StyledTableSortLabel>
@@ -38,7 +36,6 @@ const TableHeaderTrips = (props) => {
             active={valueToOrderBy === 'Return'}
             direction={valueToOrderBy === 'Return' ? orderDirection : 'asc'}
             onClick={creatSortHandler('returnStationName')}
-
           >
             Return
           </StyledTableSortLabel>
@@ -49,7 +46,6 @@ const TableHeaderTrips = (props) => {
             active={valueToOrderBy === 'Distance'}
             direction={valueToOrderBy === 'Distance' ? orderDirection : 'asc'}
             onClick={creatSortHandler('coveredDistance')}
-
           >
             Distance
           </StyledTableSortLabel>
@@ -60,14 +56,12 @@ const TableHeaderTrips = (props) => {
             active={valueToOrderBy === 'Time'}
             direction={valueToOrderBy === 'Time' ? orderDirection : 'asc'}
             onClick={creatSortHandler('duration')}
-
           >
             Time
           </StyledTableSortLabel>
         </StyledTableCell>
       </TableRow>
     </TableHead>
-
   )
 }
 

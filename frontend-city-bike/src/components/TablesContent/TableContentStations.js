@@ -6,7 +6,10 @@ import TablePagination from '@mui/material/TablePagination'
 import { useState } from 'react'
 import { styled } from '@mui/material/styles'
 import TableHeaderStations from '../TablesHeaders/TableHeaderStations'
-import { StyledPaper, StyledTableContainer } from '../../styledComponents/StyledLink'
+import {
+  StyledPaper,
+  StyledTableContainer
+} from '../../styledComponents/StyledLink'
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
@@ -16,7 +19,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:last-child td, &:last-child th': {
     border: 0
   }
-
 }))
 
 function descendingComparator (a, b, orderBy) {
@@ -81,25 +83,23 @@ const TableContentStations = ({ stations }) => {
               />
               <TableBody>
                 {stations &&
-                    sortedStations(stations, getComparator(orderDirection, valueToOrderBy))
-                      .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                      .map((station) => (
-                        <StyledTableRow key={station.id}>
-                          <TableCell>
-                            {station.name}
-                          </TableCell>
-                          <TableCell>
-                            {station.osoite}
-                          </TableCell>
-                          <TableCell>
-                            {station.kaupunki === ' ' ? 'Helsinki' : station.kaupunki}
-                          </TableCell>
-                          <TableCell>
-                            {station.kapasiteet}
-                          </TableCell>
-                        </StyledTableRow>
-                      ))}
-
+                  sortedStations(
+                    stations,
+                    getComparator(orderDirection, valueToOrderBy)
+                  )
+                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                    .map((station) => (
+                      <StyledTableRow key={station.id}>
+                        <TableCell>{station.name}</TableCell>
+                        <TableCell>{station.osoite}</TableCell>
+                        <TableCell>
+                          {station.kaupunki === ' '
+                            ? 'Helsinki'
+                            : station.kaupunki}
+                        </TableCell>
+                        <TableCell>{station.kapasiteet}</TableCell>
+                      </StyledTableRow>
+                    ))}
               </TableBody>
             </Table>
           </div>

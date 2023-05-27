@@ -2,7 +2,7 @@ import { gql, useQuery } from '@apollo/client'
 import { useState } from 'react'
 
 const FIND_STATION = gql`
-  query($stationNameToSearch: String!){
+  query ($stationNameToSearch: String!) {
     findStationByName(name: $stationNameToSearch) {
       name
       namn
@@ -19,9 +19,7 @@ const FIND_STATION = gql`
 const Station = ({ station, onClose }) => {
   return (
     <div>
-      <h2>
-        {station.name}
-      </h2>
+      <h2>{station.name}</h2>
       <div>{station.osoite}</div>
       <div>{station.kapasiteet}</div>
       <button onClick={onClose}>Close</button>
@@ -49,19 +47,19 @@ const Stations = ({ stations }) => {
 
   return (
     <div>
-
       {stations &&
-              stations.map((station) => (
-                <div
-                  className='stations'
-                  key={station.id}
-                  onClick={() => {
-                    setStationNameToSearch(station.name)
-                  }}
-                > <h2>{station.name}</h2>
-                </div>
-              ))}
-
+        stations.map((station) => (
+          <div
+            className='stations'
+            key={station.id}
+            onClick={() => {
+              setStationNameToSearch(station.name)
+            }}
+          >
+            {' '}
+            <h2>{station.name}</h2>
+          </div>
+        ))}
     </div>
   )
 }

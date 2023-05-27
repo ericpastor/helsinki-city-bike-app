@@ -16,10 +16,7 @@ function DrawerComponent () {
   const [openDrawer, setOpenDrawer] = useState(false)
   return (
     <>
-      <Drawer
-        open={openDrawer}
-        onClose={() => setOpenDrawer(false)}
-      >
+      <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
         <List>
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>

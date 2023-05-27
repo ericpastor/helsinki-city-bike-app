@@ -3,8 +3,8 @@ import TableContentTrips from './TablesContent/TableContentTrips'
 import { useState } from 'react'
 
 const ALL_TRIPS = gql`
-query AllTrips($offset: Int!, $limit: Int!) {
-  allTrips(offset: $offset, limit: $limit) {
+  query AllTrips($offset: Int!, $limit: Int!) {
+    allTrips(offset: $offset, limit: $limit) {
       departure
       return
       departureStationName
@@ -32,7 +32,20 @@ const TripList = () => {
 
   return (
     <>
-      <div className='tables'>{loading ? <p className='info'>loading...</p> : <TableContentTrips trips={data.allTrips} page={page} setPage={setPage} rowsPerPage={rowsPerPage} />}</div>
+      <div className='tables'>
+        {loading
+          ? (
+            <p className='info'>loading...</p>
+            )
+          : (
+            <TableContentTrips
+              trips={data.allTrips}
+              page={page}
+              setPage={setPage}
+              rowsPerPage={rowsPerPage}
+            />
+            )}
+      </div>
     </>
   )
 }

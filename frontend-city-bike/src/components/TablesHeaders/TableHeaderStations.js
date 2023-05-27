@@ -19,7 +19,6 @@ const TableHeaderStations = (props) => {
   }
 
   return (
-
     <TableHead>
       <TableRow>
         <StyledTableCell key='Stations'>
@@ -62,7 +61,6 @@ const TableHeaderStations = (props) => {
         </StyledTableCell>
       </TableRow>
     </TableHead>
-
   )
 }
 
