@@ -26,7 +26,8 @@ Once you have MongoDB Compass:
             - https://dev.hsl.fi/citybikes/od-trips-2021/2021-06.csv
             - https://dev.hsl.fi/citybikes/od-trips-2021/2021-07.csv
 
-        Note: As I have a free cluster, I have limited data. The following steps are to reduce the data randomly and to not import journeys for less than ten seconds and distances covered shorter than 10 meters. 
+        Note: As I have a free cluster, I have limited data. The following steps are to reduce the data 
+        randomly and to not import journeys for less than ten seconds and distances covered shorter than 10 meters. 
 
         Import Data:
 
@@ -44,6 +45,8 @@ Once you have MongoDB Compass:
         The result is 165000 documents in the collection.
 
 ## Clone the GitHub repository
+
+https://github.com/ericpastor/helsinki-city-bike-app
 
 ## Backend: 
     
@@ -99,5 +102,25 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
     Ability to filter all the calculations per month
     Endpoints to store new journeys data or new bicycle stations
     Create UI for adding journeys or bicycle stations
+
+
+### Previews
+
+#### Home 
+
+![image](https://github.com/ericpastor/helsinki-city-bike-app/assets/110885492/f6d99a8c-4b4e-4be0-bd25-2a9c36db4f22)
+
+#### Trips 
+
+![image](https://github.com/ericpastor/helsinki-city-bike-app/assets/110885492/ab0da94f-b80e-476f-baa0-2acd989cc1b9)
+
+#### Stations 
+
+![image](https://github.com/ericpastor/helsinki-city-bike-app/assets/110885492/8270328d-811b-4497-bf20-01986d0a20af)
+
+#### Search a trip
+
+![image](https://github.com/ericpastor/helsinki-city-bike-app/assets/110885492/8eeb1562-914f-42b7-b34e-ff6f3ef0df63)
+
 
 
