@@ -38,15 +38,8 @@ const resolvers = {
           },
         }
       )
+      return await Trip.find({ departureStationName: {$regex: args.departureStationName, "$options": "i"}}).skip(args.offset).limit(args.limit)
 
-      const { departureStationName, limit, offset } = args
-      const trips = await Trip.find({}).skip(offset).limit(limit)
-
-      return trips.filter(
-        (a) =>
-          a.departureStationName.toLowerCase() ==
-          departureStationName.toLowerCase()
-      )
     },
 
     allStations: async () => {
@@ -90,7 +83,7 @@ const resolvers = {
         }
       )
 
-      return await Station.findOne({ osoite: {$regex: args.osoite.toLowerCase().split(" ", 4).join(" "), "$options": "i"}})
+      return await Station.findOne({ osoite: {$regex: args.osoite, "$options": "i"}})
     },
   },
 }
