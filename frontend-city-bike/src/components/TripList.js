@@ -1,21 +1,7 @@
-import { gql, useQuery } from '@apollo/client'
+import { useQuery } from '@apollo/client'
 import TableContentTrips from './TablesContent/TableContentTrips'
 import { useState } from 'react'
-
-const ALL_TRIPS = gql`
-  query AllTrips($offset: Int!, $limit: Int!) {
-    allTrips(offset: $offset, limit: $limit) {
-      departure
-      return
-      departureStationName
-      departureStationId
-      returnStationName
-      returnStationId
-      coveredDistance
-      duration
-    }
-  }
-`
+import { ALL_TRIPS } from '../trips/graphql-queries'
 
 const TripList = () => {
   const [page, setPage] = useState(0)

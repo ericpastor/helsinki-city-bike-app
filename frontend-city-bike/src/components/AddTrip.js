@@ -1,7 +1,7 @@
 const AddTrip = () => {
   return (
     <div>
-      <p style={{ marginTop: '50px' }}>Add a Trip</p>
+      <p style={{ position: 'absolute', top: '20%', left: '20%', fontFamily: 'Montserrat, sans-serif', color: 'white' }}>Add a Trip <br /> Sorry, the page is still to implement...</p>
     </div>
   )
 }

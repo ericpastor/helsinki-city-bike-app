@@ -1,25 +1,8 @@
-import { gql, useLazyQuery } from '@apollo/client'
+import { useLazyQuery } from '@apollo/client'
 import { useState } from 'react'
 import TableContentTrips from './TablesContent/TableContentTrips'
+import { FILTER_TRIPS } from '../trips/graphql-queries'
 
-const FILTER_TRIPS = gql`
-  query ($departureStationName: String!, $limit: Int!, $offset: Int!) {
-    findTripByDeparture(
-      departureStationName: $departureStationName
-      limit: $limit
-      offset: $offset
-    ) {
-      departure
-      return
-      departureStationName
-      departureStationId
-      returnStationName
-      returnStationId
-      coveredDistance
-      duration
-    }
-  }
-`
 const FilteredTripList = () => {
   const [departureInput, setDepartureInput] = useState('')
   const [page, setPage] = useState(0)

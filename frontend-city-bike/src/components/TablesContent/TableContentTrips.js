@@ -61,7 +61,6 @@ const TableContentTrips = ({ trips, page, setPage, rowsPerPage }) => {
   if (loading) return <p className='info'>loading...</p>
 
   const tripsCount = data.tripsCount
-  console.log(tripsCount)
 
   const locale = navigator.language
   const optionsDistance = {

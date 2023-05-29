@@ -223,10 +223,12 @@ div.pagination > p {
     display: inline-block;
     font-family: 'Montserrat', sans-serif;
     width: 90%;
+    margin-top: 0px;
   }
   .search > form > div {
     display: inline-block;
     margin-left: 0;
+
   }
   .search > form > div > input {
     width: 155px;
