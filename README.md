@@ -90,10 +90,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
             Single station view
             Station name
             Station address
+    -Test E2E with cypress
 
 ### Stuff to do 
-
-    Test E2E with cypress
+    Implement more tests
     Station location on the map
     The average distance of a journey starting from the station
     The average distance of a journey ending at the station
