@@ -123,4 +123,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 ![image](https://github.com/ericpastor/helsinki-city-bike-app/assets/110885492/8eeb1562-914f-42b7-b34e-ff6f3ef0df63)
 
 
+#### First Cypress tests
+
+![image](https://github.com/ericpastor/helsinki-city-bike-app/assets/110885492/230a95f2-9677-42a3-93a9-5a99def3fda4)
+
+
 
