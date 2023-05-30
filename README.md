@@ -10,39 +10,39 @@ Install MongoDB Compass. The GUI for MongoDB.
 
 Once you have MongoDB Compass:
 
-    - Connect with your MongoDB Atlas Cluster
+Connect with your MongoDB Atlas Cluster
 
-    - Create a new database
+Create a new database
 
-    - Collection stations:
+Collection stations:
 
-        - Download stations data:<https://opendata.arcgis.com/datasets/726277c507ef4914b0aec3cbcfcbfafc_0.csv>
-        - Import Data.
+Download stations data:<https://opendata.arcgis.com/datasets/726277c507ef4914b0aec3cbcfcbfafc_0.csv>
+Import Data.
 
-    - Collection trips:
+Collection trips:
 
-        - Download trips data:
-            - <https://dev.hsl.fi/citybikes/od-trips-2021/2021-05.csv>
-            - <https://dev.hsl.fi/citybikes/od-trips-2021/2021-06.csv>
-            - <https://dev.hsl.fi/citybikes/od-trips-2021/2021-07.csv>
+Download trips data:
+<https://dev.hsl.fi/citybikes/od-trips-2021/2021-05.csv>
+<https://dev.hsl.fi/citybikes/od-trips-2021/2021-06.csv>
+<https://dev.hsl.fi/citybikes/od-trips-2021/2021-07.csv>
 
-        Note: As I have a free cluster, I have limited data. The following steps are to reduce the data 
-        randomly and to not import journeys for less than ten seconds and distances covered shorter than 10 meters. 
+Note: As I have a free cluster, I have limited data. The following steps are to reduce the data 
+randomly and to not import journeys for less than ten seconds and distances covered shorter than 10 meters. 
 
-        Import Data:
+Import Data:
 
-            -Aggregations + Add Stage
+Aggregations + Add Stage
 
-                - $sample { size: number }  -->"Only allows 5% at most"
+ $sample { size: number }  -->"Only allows 5% at most"
 
-            -Aggregations + Add Stage
+    Aggregations + Add Stage
 
-                - $match: { 
-                    Covered distance (m): { $gt: 10  }
-                    Duration (sec): { $gt: 10  }
-                    }
+        $match: { 
+            Covered distance (m): { $gt: 10  }
+            Duration (sec): { $gt: 10  }
+            }
         
-        The result is 165000 documents in the collection.
+The result is 165000 documents in the collection.
 
 ## Clone the GitHub repository
 
@@ -50,8 +50,8 @@ https://github.com/ericpastor/helsinki-city-bike-app
 
 ## Backend: 
     
-    - npm install
-    - Create a .env file with MONGODB_URI=mongodb+srv://XXXXXXXXXXXXXX@clusterX.XXXXXX.mongodb.net/XXXXXXXXX?retryWrites=true&w=majority 
+npm install
+Create a .env file with MONGODB_URI=mongodb+srv://XXXXXXXXXXXXXX@clusterX.XXXXXX.mongodb.net/XXXXXXXXX?retryWrites=true&w=majority 
 
 ### `npm run dev`
 
@@ -61,7 +61,7 @@ It will open a server ready at <http://localhost:4000/>
 
 ## Frontend: 
 
-    - npm install
+     npm install
 
 ### `npm start`
 
@@ -70,19 +70,19 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ### Stuff done:
 
-    - Import data from the CSV files to a database or in-memory storage
-    - Validate data before importing
-    - Don't import journeys that lasted for less than ten seconds
-    - Don't import journeys that covered distances shorter than 10 meters
+     Import data from the CSV files to a database or in-memory storage
+     Validate data before importing
+     Don't import journeys that lasted for less than ten seconds
+     Don't import journeys that covered distances shorter than 10 meters
         
-        - Journey list view
+         Journey list view
             Pagination Implemented
             Departure and return stations, covered distance in kilometers and duration in minutes
             Ordering per column
             Searching
           
 
-        - Station list
+         Station list
             List all the stations
             Pagination
             Ordering per column
@@ -90,7 +90,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
             Single station view
             Station name
             Station address
-    -Test E2E with cypress
+    Test E2E with cypress
 
 ### Stuff to do 
     Implement more tests
