@@ -16,15 +16,15 @@ Once you have MongoDB Compass:
 
     - Collection stations:
 
-        - Download stations data: https://opendata.arcgis.com/datasets/726277c507ef4914b0aec3cbcfcbfafc_0.csv
+        - Download stations data:<https://opendata.arcgis.com/datasets/726277c507ef4914b0aec3cbcfcbfafc_0.csv>
         - Import Data.
 
     - Collection trips:
 
         - Download trips data:
-            - https://dev.hsl.fi/citybikes/od-trips-2021/2021-05.csv
-            - https://dev.hsl.fi/citybikes/od-trips-2021/2021-06.csv
-            - https://dev.hsl.fi/citybikes/od-trips-2021/2021-07.csv
+            - <https://dev.hsl.fi/citybikes/od-trips-2021/2021-05.csv>
+            - <https://dev.hsl.fi/citybikes/od-trips-2021/2021-06.csv>
+            - <https://dev.hsl.fi/citybikes/od-trips-2021/2021-07.csv>
 
         Note: As I have a free cluster, I have limited data. The following steps are to reduce the data 
         randomly and to not import journeys for less than ten seconds and distances covered shorter than 10 meters. 
@@ -56,7 +56,7 @@ https://github.com/ericpastor/helsinki-city-bike-app
 ### `npm run dev`
 
 Connection to MongoDB
-It will open a server ready at http://localhost:4000/
+It will open a server ready at <http://localhost:4000/>
 
 
 ## Frontend: 
