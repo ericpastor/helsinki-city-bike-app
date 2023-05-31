@@ -140,6 +140,7 @@ const TableContentTrips = ({ trips, page, setPage, rowsPerPage }) => {
         </button>
         <p>Page {page + 1}</p>
         <button
+          id='next'
           className='pagination-buttons'
           disabled={rowsPerPage * page >= tripsCount}
           onClick={() => setPage((prev) => prev + 1)}

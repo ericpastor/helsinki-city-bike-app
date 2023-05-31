@@ -8,7 +8,7 @@ const FilteredTripList = () => {
   const [page, setPage] = useState(0)
 
   const rowsPerPage = 1000
-  const [getTrips, { data, loading }] = useLazyQuery(FILTER_TRIPS, {
+  const [getTrips, { data, loading, error }] = useLazyQuery(FILTER_TRIPS, {
     variables: {
       departureStationName: departureInput,
       limit: rowsPerPage,
@@ -19,6 +19,8 @@ const FilteredTripList = () => {
   if (data === null) {
     return null
   }
+
+  if (error) return <p className='message-error'>Sorry, something went wrong. Try later...</p>
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -36,7 +38,7 @@ const FilteredTripList = () => {
               placeholder='Pasilan Asema, Töölöntulli, Teljäntie,...'
               onChange={(e) => setDepartureInput(e.target.value)}
             />
-            <button onClick={() => getTrips()}> Search!</button>
+            <button id='search-trips' onClick={() => getTrips()}> Search!</button>
           </div>
         </form>
         {!departureInput
@@ -55,6 +57,7 @@ const FilteredTripList = () => {
                     rowsPerPage={rowsPerPage}
                   />
                 )}
+                {error && error}
               </div>
             </>
             )}

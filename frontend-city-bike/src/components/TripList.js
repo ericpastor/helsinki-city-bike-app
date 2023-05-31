@@ -14,7 +14,7 @@ const TripList = () => {
     }
   })
 
-  if (error) return <span style={{ color: 'red' }}>{error}</span>
+  if (error) return <p className='message-error'>Sorry, something went wrong. Try later...</p>
 
   return (
     <>
@@ -31,6 +31,7 @@ const TripList = () => {
               rowsPerPage={rowsPerPage}
             />
             )}
+        {error && error}
       </div>
     </>
   )

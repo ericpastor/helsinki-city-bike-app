@@ -9,10 +9,35 @@ describe('Helsinki City Bike App', () => {
 describe('When searching trip', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000')
-  })
-  it('search trip can be opened', () => {
-    cy.get('.button-options').eq(0).contains('Search a trip!').click()
+
+    cy.get('.button-options').contains('Search a trip!').click()
     cy.contains('Departure Station:')
     cy.contains('choose a departure station...')
+  })
+
+  it('succeds searching a departure station', () => {
+    cy.get('[placeholder="Pasilan Asema, Töölöntulli, Teljäntie,..."]').type('pasila')
+
+    cy.get('#search-trips').click()
+
+    cy.get('html').should('contain', 'loading')
+
+    cy.get('html', { setTimeout: 5000 }).should('contain', 'Pasilan asema')
+
+    cy.contains('Distance').click()
+
+    cy.get('html', { setTimeout: 5000 }).should('contain', '0.01 km')
+
+    cy.get('#next').click()
+
+    cy.get('html', { setTimeout: 5000 }).should('contain', '0.36 km')
+  })
+
+  it('fails when departure station doesn\'t exist', () => {
+    cy.get('[placeholder="Pasilan Asema, Töölöntulli, Teljäntie,..."]').type('khjvjhvhj')
+
+    cy.get('#search-trips').click()
+
+    cy.get('html').should('contain', 'Sorry')
   })
 })

@@ -6,7 +6,7 @@ import { SEARCH_STATION } from '../stations/graphql-queries'
 const SearchStations = () => {
   const [nameInput, setNameInput] = useState('')
 
-  const [getStation, { data, loading }] = useLazyQuery(SEARCH_STATION, {
+  const [getStation, { data, loading, error }] = useLazyQuery(SEARCH_STATION, {
     variables: {
       osoite: nameInput
     }
@@ -15,6 +15,8 @@ const SearchStations = () => {
   if (data === null) {
     return null
   }
+
+  if (error) return <p className='message-error'>Sorry, something went wrong. Try later...</p>
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -43,6 +45,7 @@ const SearchStations = () => {
             <div>
               {loading && <p className='info'>loading...</p>}
               {data && <StationDetails station={Object.values(data)} />}
+              {error && error}
             </div>
           </>
           )}

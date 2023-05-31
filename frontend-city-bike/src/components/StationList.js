@@ -5,7 +5,7 @@ import { ALL_STATIONS } from '../stations/graphql-queries'
 const StationList = () => {
   const { data, error, loading } = useQuery(ALL_STATIONS)
 
-  if (error) return <span style={{ color: 'red' }}>{error}</span>
+  if (error) return <p className='message-error'>Sorry, something went wrong. Try later...</p>
 
   return (
     <>
@@ -17,6 +17,7 @@ const StationList = () => {
           : (
             <TableContentStations stations={data.allStations} />
             )}
+        {error && error}
       </div>
     </>
   )

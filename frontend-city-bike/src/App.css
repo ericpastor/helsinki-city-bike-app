@@ -238,8 +238,19 @@ div.pagination > p {
   margin-top: 50px;
 }
 .message-error {
+  position: absolute;
+  top: 15%;
+  left: 15%;
   font-weight: bold;
   color: white;
+}
+
+@media screen and (max-width: 570px){
+  .message-error{
+    position: absolute;
+    top: 15%;
+    left: 5%;
+  }
 }
 .info {
   color: #8bb3e9;
